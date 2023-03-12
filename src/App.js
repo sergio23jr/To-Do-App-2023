@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
-import AddTaskForm from './components/AddTaskForm.jsx';
-import UpdateForm from './components/UpdateForm.jsx';
-import ToDo from './components/ToDo.jsx';
+import AddTaskForm from './components/AddTaskForm';
+import UpdateForm from './components/UpdateForm';
+import ToDo from './components/ToDo';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import './App.css';
 
 function App() {
@@ -12,7 +11,6 @@ function App() {
   const [toDo, setToDo] = useState([
     {id: 1, title: 'Task 1', status: false },
     {id: 2, title: 'Task 2', status: true }
-
   ])
 
   // Temp State
@@ -21,6 +19,12 @@ function App() {
 
   // This is for holding temporarily holding the data for a task being updated
   const [updateData, setUpdatedData] = useState('');
+
+  // React.useEffect(() => {
+  //   fetch("/api")
+  //     .then((res) => res.json())
+  //     .then((data) => setData(data.message));
+  // }, []);
 
   // Function to add task
   const addTask = () => {
